@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  color: rgb(19, 11, 49);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.6rem;
+}
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.color-plates {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.plate {
+  display: flex;
+  width: 20vw;
+  min-height: 80vh;
+  padding-bottom: 10vh;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.plate button,
+.close-save,
+.close-lib {
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.sliders-adjust {
+  width: 90%;
+  transform: translateY(100%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px 5px 0px 0px;
+  background-color: whitesmoke;
+  color: gray;
+  font-size: 1rem;
+  padding: 1rem 1rem 0.5rem 1rem;
+  position: absolute;
+  bottom: 0px;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+.sliders-adjust.active {
+  transform: translateY(1%);
+  pointer-events: all;
+}
+.close-adjust,
+.close-save,
+.close-lib {
+  width: 100%;
+  text-align: right;
+}
+path,
+i,
+svg {
+  pointer-events: none;
+}
+.options {
+  width: 100%;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.options button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 2.4rem;
+  color: whitesmoke;
+  background-color: rgb(19, 11, 49);
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+}
+.options p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+/* .btn-lib,
+.btn-refresh,
+.btn-save {
+
+} */
+/* .options .btn-name {
+  
+} */
+
+/* change slider style */
+input[type="range"] {
+  -webkit-appearance: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.copy-container,
+.save-container,
+.lib-container {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background-color: rgb(19, 11, 49, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.copy-popup,
+.save-popup,
+.lib-popup {
+  width: 20%;
+  padding: 1.6rem;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-wrap: wrap;
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(-2rem);
+}
+.copied-text,
+.saved-text,
+.lib-text {
+  width: 100%;
+  text-align: center;
+}
+.copy-popup svg {
+  color: rgb(241, 148, 164);
+  font-size: 2.4rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+.copy-container.active,
+.save-container.active,
+.lib-container.active {
+  opacity: 1;
+}
+.copy-popup.active,
+.save-popup.active,
+.lib-popup.active {
+  transform: translateY(0rem);
+  pointer-events: all;
+}
+.save-popup {
+  flex-direction: column;
+  justify-content: space-around;
+}
+.btn-save-palatte,
+.btn-use-palette,
+.btn-delete-palette {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: rgb(19, 11, 49);
+  color: white;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+.btn-use-palette,
+.btn-delete-palette {
+  margin-top: 0;
+  margin-left: 1rem;
+}
+.btn-delete-palette {
+  background-color: #d84646;
+}
+#palatte-name {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(19, 11, 49, 0.5);
+  margin-top: 2rem;
+}
+
+.lib-popup {
+  flex-basis: 30%;
+  flex-direction: column;
+}
+.preview-palette {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+}
+.small-palette {
+  width: 2rem;
+  height: 5rem;
+  flex-grow: 1;
+}
+.palette-name {
+  flex-grow: 2;
+  flex-basis: 6rem;
+  margin-top: 1.5rem;
+  margin-right: 1rem;
+}
